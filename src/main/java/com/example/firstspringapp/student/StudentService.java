@@ -3,7 +3,6 @@ package com.example.firstspringapp.student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -38,11 +37,11 @@ public class StudentService {
                         "student with id " + studentId + " does not exist"
                 ));
 
-        if (name != null && name.length() > 0 && !name.equals(student.getName())) {
+        if (name != null && name.isEmpty() && !name.equals(student.getName())) {
             student.setName(name);
         }
 
-        if (email != null && email.length() > 0 && !email.equals(student.getEmail())) {
+        if (email != null && email.isEmpty() && !email.equals(student.getEmail())) {
             student.setEmail(email);
         }
     }
